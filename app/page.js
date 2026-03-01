@@ -25,6 +25,14 @@ const highlights = [
   "Ubicacion en La Almunia de Dona Godina"
 ];
 
+const galleryImages = [
+  { src: "/image1.png", alt: "Mascarilla facial profesional" },
+  { src: "/image2.png", alt: "Ingredientes naturales en tratamiento estetico" },
+  { src: "/image3.png", alt: "Masaje corporal relajante" },
+  { src: "/image4.png", alt: "Look de maquillaje para evento" },
+  { src: "/image5.png", alt: "Cuidado facial con enfoque spa" }
+];
+
 const transformations = [
   {
     phase: "Antes",
@@ -60,8 +68,13 @@ export default function HomePage() {
       <header className="nav-wrap">
         <div className="container nav">
           <div className="brand">
-            <span className="brand-dot" />
-            Marta Martinez Saez
+            <div className="brand-logo">
+              <Image src="/logo.jpg" alt="Logo Marta Martinez Saez" fill sizes="54px" />
+            </div>
+            <div className="brand-text">
+              <span>Marta Martinez Saez</span>
+              <small>Maquillaje y Estetica</small>
+            </div>
           </div>
           <a className="btn btn-secondary nav-btn" href="tel:+34676239789">
             Reserva: 676 23 97 89
@@ -75,7 +88,7 @@ export default function HomePage() {
         <div className="container hero-grid">
           <div className="hero-content">
             <p className="eyebrow">Marta Martinez Saez</p>
-            <h1>Belleza que cuida, acompana y transforma.</h1>
+            <h1>Estetica premium para verte increible y sentirte mejor.</h1>
             <p className="hero-copy">
               Maquillaje y estetica profesional con un enfoque humano y delicado. Especialistas
               en bienestar de la piel, incluyendo cuidado estetico oncologico junto a{" "}
@@ -105,13 +118,16 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="hero-card">
-            <div className="logo-wrap">
-              <Image src="/logo.jpg" alt="Logo Marta Martinez Saez" fill priority sizes="320px" />
+          <div className="hero-visual">
+            <div className="hero-image-main">
+              <Image src="/image5.png" alt="Ritual premium de cuidado facial" fill priority sizes="560px" />
             </div>
-            <div className="hero-card-text">
-              <p className="card-title">Centro de Maquillaje y Estetica</p>
-              <p className="card-subtitle">Resultados naturales, elegantes y con alma.</p>
+            <div className="hero-image-floating">
+              <Image src="/image2.png" alt="Texturas y activos de tratamiento" fill sizes="260px" />
+            </div>
+            <div className="hero-note">
+              <p className="card-title">Beauty Studio Boutique</p>
+              <p className="card-subtitle">Experiencia sensorial, tecnica y resultados naturales.</p>
             </div>
           </div>
         </div>
@@ -147,13 +163,29 @@ export default function HomePage() {
             </ul>
           </div>
 
-          <div className="moodboard">
-            <Image
-              src="/instagram-moodboard.png"
-              alt="Inspiracion visual del estilo de Marta Martinez Saez"
-              fill
-              sizes="(max-width: 768px) 100vw, 520px"
-            />
+          <div className="premium-stack">
+            <div className="premium-main">
+              <Image src="/image1.png" alt="Tratamiento facial estetico premium" fill sizes="520px" />
+            </div>
+            <div className="premium-sub">
+              <Image src="/image3.png" alt="Momento de bienestar corporal" fill sizes="320px" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-reveal">
+        <div className="container">
+          <div className="gallery-heading">
+            <p className="eyebrow">Galeria</p>
+            <h2>Una identidad visual cuidada, elegante y actual</h2>
+          </div>
+          <div className="gallery-grid">
+            {galleryImages.map((item, index) => (
+              <figure className={`gallery-item item-${index + 1}`} key={item.src}>
+                <Image src={item.src} alt={item.alt} fill sizes="(max-width: 900px) 100vw, 33vw" />
+              </figure>
+            ))}
           </div>
         </div>
       </section>
