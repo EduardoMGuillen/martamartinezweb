@@ -77,7 +77,7 @@ export default function HomePage() {
             </div>
           </div>
           <a className="btn btn-secondary nav-btn" href="tel:+34676239789">
-            Reserva: 676 23 97 89
+            Reservar cita
           </a>
         </div>
       </header>
