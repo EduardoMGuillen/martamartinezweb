@@ -163,11 +163,42 @@ const pestanas = [
 
 const navLinks = [
   { href: "#faciales", label: "Faciales" },
+  { href: "#tarifas", label: "Tarifas" },
   { href: "#manos-pies", label: "Manos y pies" },
   { href: "#depilacion", label: "Depilación" },
   { href: "#mirada", label: "Mirada" },
   { href: "#presoterapia", label: "Presoterapia" },
   { href: "#contacto", label: "Contacto" }
+];
+
+const visualBlocks = [
+  {
+    title: "Rituales Faciales",
+    subtitle: "Luminosidad y piel renovada",
+    image:
+      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    title: "Manos y Pies",
+    subtitle: "Detalles que elevan tu imagen",
+    image:
+      "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    title: "Mirada Perfecta",
+    subtitle: "Cejas y pestañas con diseño",
+    image:
+      "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=1200&q=80"
+  }
+];
+
+const quickPrices = [
+  { category: "Faciales", from: "Desde 45 €", note: "Tratamientos personalizados" },
+  { category: "Rituales sensoriales", from: "Desde 30 €", note: "Experiencias premium" },
+  { category: "Manicura", from: "Desde 18 €", note: "Opciones básicas y deluxe" },
+  { category: "Pedicura", from: "Desde 18 €", note: "Con esmaltado y premium" },
+  { category: "Depilación láser", from: "Desde 109 €", note: "Cuerpo completo mujer" },
+  { category: "Presoterapia", from: "Desde 15 €", note: "Sesión 30 minutos" }
 ];
 
 export default function HomePage() {
@@ -238,18 +269,56 @@ export default function HomePage() {
               <Image src="/image5.png" alt="Tratamiento facial en centro de estética" fill priority sizes="560px" />
               <div className="hero-caption">Centro de Estética · Huesca</div>
             </div>
+            <div className="hero-chip">+30 tratamientos</div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-reveal" id="tarifas">
+        <div className="container">
+          <div className="section-headline">
+            <h2>Tarifas rápidas</h2>
+            <p>Una visión rápida para elegir tu tratamiento ideal.</p>
+          </div>
+          <div className="quick-price-grid">
+            {quickPrices.map((item) => (
+              <article className="quick-price-card" key={item.category}>
+                <h3>{item.category}</h3>
+                <p className="quick-price">{item.from}</p>
+                <p>{item.note}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-reveal">
+        <div className="container">
+          <div className="visual-grid">
+            {visualBlocks.map((item) => (
+              <article className="visual-card" key={item.title}>
+                <img src={item.image} alt={item.title} loading="lazy" />
+                <div className="visual-overlay">
+                  <h3>{item.title}</h3>
+                  <p>{item.subtitle}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
       <section className="section section-reveal" id="faciales">
         <div className="container">
-          <h2>Tratamientos faciales</h2>
+          <div className="section-headline">
+            <h2>Tratamientos faciales</h2>
+            <p>Resultados visibles con protocolos adaptados a tu tipo de piel.</p>
+          </div>
           <div className="services-grid">
             {faciales.map((service) => (
               <article className="service-card" key={service.title}>
                 <h3>{service.title}</h3>
-                <p>{service.description}</p>
+                <p className="compact-text">{service.description}</p>
                 <strong>{service.price}</strong>
               </article>
             ))}
@@ -259,12 +328,15 @@ export default function HomePage() {
 
       <section className="section section-reveal">
         <div className="container">
-          <h2>Rituales sensoriales</h2>
+          <div className="section-headline">
+            <h2>Rituales sensoriales</h2>
+            <p>Bienestar mental y corporal en sesiones envolventes.</p>
+          </div>
           <div className="services-grid">
             {rituales.map((service) => (
               <article className="service-card" key={service.title}>
                 <h3>{service.title}</h3>
-                <p>{service.description}</p>
+                <p className="compact-text">{service.description}</p>
                 <p className="meta-line">Duración: {service.duration}</p>
                 <strong>Precio recomendado: {service.price}</strong>
               </article>
@@ -276,7 +348,10 @@ export default function HomePage() {
 
       <section className="section section-reveal">
         <div className="container">
-          <h2>Boosters faciales (añadibles)</h2>
+          <div className="section-headline">
+            <h2>Boosters faciales</h2>
+            <p>Complementos para potenciar cualquier tratamiento.</p>
+          </div>
           <div className="list-card">
             {boosters.map((item) => (
               <div className="line-item" key={item.name}>
@@ -290,7 +365,10 @@ export default function HomePage() {
 
       <section className="section section-reveal" id="manos-pies">
         <div className="container">
-          <h2>Manicura y pedicura</h2>
+          <div className="section-headline">
+            <h2>Manicura y pedicura</h2>
+            <p>Cuidado de manos y pies con acabado impecable.</p>
+          </div>
           <div className="two-columns">
             <article className="list-card">
               <h3>Manicura</h3>
@@ -322,7 +400,10 @@ export default function HomePage() {
 
       <section className="section section-reveal" id="depilacion">
         <div className="container">
-          <h2>Depilación: cera y láser</h2>
+          <div className="section-headline">
+            <h2>Depilación: cera y láser</h2>
+            <p>Opciones rápidas y efectivas según tu objetivo.</p>
+          </div>
           <div className="two-columns">
             <article className="list-card">
               <h3>Depilación con cera</h3>
@@ -356,7 +437,10 @@ export default function HomePage() {
 
       <section className="section section-reveal" id="mirada">
         <div className="container">
-          <h2>Cejas y pestañas</h2>
+          <div className="section-headline">
+            <h2>Cejas y pestañas</h2>
+            <p>Diseño de mirada con efecto natural y elegante.</p>
+          </div>
           <div className="two-columns">
             <article className="list-card">
               <h3>Cejas | Diseño y color</h3>
