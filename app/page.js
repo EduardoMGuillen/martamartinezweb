@@ -163,43 +163,30 @@ const pestanas = [
 
 const navLinks = [
   { href: "#faciales", label: "Faciales" },
-  { href: "#tarifas", label: "Tarifas" },
   { href: "#manos-pies", label: "Manos y pies" },
   { href: "#depilacion", label: "Depilación" },
   { href: "#mirada", label: "Mirada" },
   { href: "#presoterapia", label: "Presoterapia" },
+  { href: "#ubicacion", label: "Ubicación" },
   { href: "#contacto", label: "Contacto" }
 ];
 
-const visualBlocks = [
-  {
-    title: "Rituales Faciales",
-    subtitle: "Luminosidad y piel renovada",
-    image:
-      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80"
-  },
-  {
-    title: "Manos y Pies",
-    subtitle: "Detalles que elevan tu imagen",
-    image:
-      "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1200&q=80"
-  },
-  {
-    title: "Mirada Perfecta",
-    subtitle: "Cejas y pestañas con diseño",
-    image:
-      "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=1200&q=80"
-  }
-];
-
-const quickPrices = [
-  { category: "Faciales", from: "Desde 45 €", note: "Tratamientos personalizados" },
-  { category: "Rituales sensoriales", from: "Desde 30 €", note: "Experiencias premium" },
-  { category: "Manicura", from: "Desde 18 €", note: "Opciones básicas y deluxe" },
-  { category: "Pedicura", from: "Desde 18 €", note: "Con esmaltado y premium" },
-  { category: "Depilación láser", from: "Desde 109 €", note: "Cuerpo completo mujer" },
-  { category: "Presoterapia", from: "Desde 15 €", note: "Sesión 30 minutos" }
-];
+const sectionImages = {
+  faciales:
+    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1800&q=80",
+  rituales:
+    "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1800&q=80",
+  boosters:
+    "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1800&q=80",
+  manosPies:
+    "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1800&q=80",
+  depilacion:
+    "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=1800&q=80",
+  mirada:
+    "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=1800&q=80",
+  presoterapia:
+    "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1800&q=80"
+};
 
 export default function HomePage() {
   return (
@@ -274,42 +261,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section section-reveal" id="tarifas">
-        <div className="container">
-          <div className="section-headline">
-            <h2>Tarifas rápidas</h2>
-            <p>Una visión rápida para elegir tu tratamiento ideal.</p>
-          </div>
-          <div className="quick-price-grid">
-            {quickPrices.map((item) => (
-              <article className="quick-price-card" key={item.category}>
-                <h3>{item.category}</h3>
-                <p className="quick-price">{item.from}</p>
-                <p>{item.note}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-reveal">
-        <div className="container">
-          <div className="visual-grid">
-            {visualBlocks.map((item) => (
-              <article className="visual-card" key={item.title}>
-                <img src={item.image} alt={item.title} loading="lazy" />
-                <div className="visual-overlay">
-                  <h3>{item.title}</h3>
-                  <p>{item.subtitle}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="section section-reveal" id="faciales">
         <div className="container">
+          <figure className="section-image">
+            <img src={sectionImages.faciales} alt="Tratamiento facial profesional" loading="lazy" />
+          </figure>
           <div className="section-headline">
             <h2>Tratamientos faciales</h2>
             <p>Resultados visibles con protocolos adaptados a tu tipo de piel.</p>
@@ -328,6 +284,9 @@ export default function HomePage() {
 
       <section className="section section-reveal">
         <div className="container">
+          <figure className="section-image">
+            <img src={sectionImages.rituales} alt="Ritual sensorial en cabina" loading="lazy" />
+          </figure>
           <div className="section-headline">
             <h2>Rituales sensoriales</h2>
             <p>Bienestar mental y corporal en sesiones envolventes.</p>
@@ -348,6 +307,9 @@ export default function HomePage() {
 
       <section className="section section-reveal">
         <div className="container">
+          <figure className="section-image">
+            <img src={sectionImages.boosters} alt="Activos cosméticos para boosters faciales" loading="lazy" />
+          </figure>
           <div className="section-headline">
             <h2>Boosters faciales</h2>
             <p>Complementos para potenciar cualquier tratamiento.</p>
@@ -365,6 +327,9 @@ export default function HomePage() {
 
       <section className="section section-reveal" id="manos-pies">
         <div className="container">
+          <figure className="section-image">
+            <img src={sectionImages.manosPies} alt="Servicio de manicura y pedicura" loading="lazy" />
+          </figure>
           <div className="section-headline">
             <h2>Manicura y pedicura</h2>
             <p>Cuidado de manos y pies con acabado impecable.</p>
@@ -400,6 +365,9 @@ export default function HomePage() {
 
       <section className="section section-reveal" id="depilacion">
         <div className="container">
+          <figure className="section-image">
+            <img src={sectionImages.depilacion} alt="Depilación con cera y láser" loading="lazy" />
+          </figure>
           <div className="section-headline">
             <h2>Depilación: cera y láser</h2>
             <p>Opciones rápidas y efectivas según tu objetivo.</p>
@@ -437,6 +405,9 @@ export default function HomePage() {
 
       <section className="section section-reveal" id="mirada">
         <div className="container">
+          <figure className="section-image">
+            <img src={sectionImages.mirada} alt="Diseño de cejas y pestañas" loading="lazy" />
+          </figure>
           <div className="section-headline">
             <h2>Cejas y pestañas</h2>
             <p>Diseño de mirada con efecto natural y elegante.</p>
@@ -475,6 +446,9 @@ export default function HomePage() {
 
       <section className="section section-reveal" id="presoterapia">
         <div className="container">
+          <figure className="section-image">
+            <img src={sectionImages.presoterapia} alt="Sesión de presoterapia y bienestar" loading="lazy" />
+          </figure>
           <div className="list-card">
             <h2>Presoterapia</h2>
             <p>
@@ -497,6 +471,26 @@ export default function HomePage() {
             <p className="section-note">
               Opciones adicionales: presoterapia ocular y cuerpo completo (consultar precio).
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-reveal" id="ubicacion">
+        <div className="container">
+          <div className="location-card">
+            <h2>Ubicación</h2>
+            <p>
+              Estamos en Huesca. Pulsa el botón para abrir la ruta directa en Google Maps y llegar
+              al centro sin complicaciones.
+            </p>
+            <a
+              className="btn btn-primary"
+              href="https://maps.app.goo.gl/ZmvSNEpq1qnQr2RX9"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Abrir ubicación
+            </a>
           </div>
         </div>
       </section>
