@@ -211,7 +211,7 @@ export default function HomePage() {
         rel="noreferrer"
         aria-label="Contactar por WhatsApp"
       >
-        WhatsApp
+        WhatsApp +34 676 23 97 89
       </a>
 
       <header className="nav-wrap">
@@ -226,7 +226,7 @@ export default function HomePage() {
             </div>
           </div>
           <a className="btn btn-secondary nav-btn" href="tel:+34676239789">
-            Reservar cita
+            Llamar +34 676 23 97 89
           </a>
         </div>
         <div className="container nav-menu">
@@ -258,7 +258,7 @@ export default function HomePage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Escribir por WhatsApp
+                WhatsApp +34 676 23 97 89
               </a>
             </div>
             <p className="hero-location">Atención personalizada con cita previa.</p>
@@ -517,7 +517,7 @@ export default function HomePage() {
         <div className="container cta-box section-reveal">
           <h2>Reserva tu cita</h2>
           <p>
-            Contacto directo para asesoramiento y reservas: <strong>676 23 97 89</strong>.
+            Contacto directo para asesoramiento y reservas: <strong>+34 676 23 97 89</strong>.
           </p>
           <div className="mini-note">
             Si tienes dudas sobre zonas, combinados o tratamientos personalizados, te asesoramos
@@ -533,7 +533,7 @@ export default function HomePage() {
               target="_blank"
               rel="noreferrer"
             >
-              WhatsApp
+              WhatsApp +34 676 23 97 89
             </a>
           </div>
         </div>
