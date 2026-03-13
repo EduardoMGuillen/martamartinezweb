@@ -263,21 +263,6 @@ h3 {
   gap: 1rem;
 }
 
-.section-image {
-  margin: 0 0 1.2rem;
-  min-height: 280px;
-  border: 1px solid #d2c4f0;
-  overflow: hidden;
-}
-
-.section-image img {
-  width: 100%;
-  height: 100%;
-  min-height: 280px;
-  object-fit: cover;
-  display: block;
-}
-
 .section-headline {
   display: grid;
   gap: 0.45rem;
@@ -304,6 +289,45 @@ h3 {
 
 .compact-text {
   font-size: 0.93rem;
+}
+
+.visual-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.visual-card {
+  position: relative;
+  border: 1px solid #d2c4f0;
+  overflow: hidden;
+  min-height: 280px;
+}
+
+.visual-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.visual-overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(27, 18, 51, 0.76) 74%);
+  padding: 1rem;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.visual-overlay h3 {
+  color: #fff;
+  font-size: 0.92rem;
+}
+
+.visual-overlay p {
+  color: #e7defc;
+  font-size: 0.86rem;
 }
 
 .meta-line {
@@ -463,6 +487,10 @@ h3 {
     min-height: 500px;
   }
 
+  .visual-grid {
+    grid-template-columns: 1fr;
+  }
+
   .services-grid,
   .two-columns {
     grid-template-columns: 1fr;
@@ -490,14 +518,6 @@ h3 {
   .hero-image-main {
     min-height: 0;
     aspect-ratio: 3 / 4;
-  }
-
-  .section-image {
-    min-height: 220px;
-  }
-
-  .section-image img {
-    min-height: 220px;
   }
 
   .map-frame-wrap,

@@ -173,22 +173,26 @@ const navLinks = [
 
 const locationLink = "https://maps.app.goo.gl/ZmvSNEpq1qnQr2RX9";
 
-const sectionImages = {
-  faciales:
-    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1800&q=80",
-  rituales:
-    "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1800&q=80",
-  boosters:
-    "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1800&q=80",
-  manosPies:
-    "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1800&q=80",
-  depilacion:
-    "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=1800&q=80",
-  mirada:
-    "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=1800&q=80",
-  presoterapia:
-    "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1800&q=80"
-};
+const visualBlocks = [
+  {
+    title: "Rituales Faciales",
+    subtitle: "Luminosidad y piel renovada",
+    image:
+      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    title: "Manos y Pies",
+    subtitle: "Detalles que elevan tu imagen",
+    image:
+      "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    title: "Mirada Perfecta",
+    subtitle: "Cejas y pestañas con diseño",
+    image:
+      "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=1200&q=80"
+  }
+];
 
 export default function HomePage() {
   return (
@@ -263,11 +267,24 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="section section-reveal">
+        <div className="container">
+          <div className="visual-grid">
+            {visualBlocks.map((item) => (
+              <article className="visual-card" key={item.title}>
+                <img src={item.image} alt={item.title} loading="lazy" />
+                <div className="visual-overlay">
+                  <h3>{item.title}</h3>
+                  <p>{item.subtitle}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section section-reveal" id="faciales">
         <div className="container">
-          <figure className="section-image">
-            <img src={sectionImages.faciales} alt="Tratamiento facial profesional" loading="lazy" />
-          </figure>
           <div className="section-headline">
             <h2>Tratamientos faciales</h2>
             <p>Resultados visibles con protocolos adaptados a tu tipo de piel.</p>
@@ -286,9 +303,6 @@ export default function HomePage() {
 
       <section className="section section-reveal">
         <div className="container">
-          <figure className="section-image">
-            <img src={sectionImages.rituales} alt="Ritual sensorial en cabina" loading="lazy" />
-          </figure>
           <div className="section-headline">
             <h2>Rituales sensoriales</h2>
             <p>Bienestar mental y corporal en sesiones envolventes.</p>
@@ -309,9 +323,6 @@ export default function HomePage() {
 
       <section className="section section-reveal">
         <div className="container">
-          <figure className="section-image">
-            <img src={sectionImages.boosters} alt="Activos cosméticos para boosters faciales" loading="lazy" />
-          </figure>
           <div className="section-headline">
             <h2>Boosters faciales</h2>
             <p>Complementos para potenciar cualquier tratamiento.</p>
@@ -329,9 +340,6 @@ export default function HomePage() {
 
       <section className="section section-reveal" id="manos-pies">
         <div className="container">
-          <figure className="section-image">
-            <img src={sectionImages.manosPies} alt="Servicio de manicura y pedicura" loading="lazy" />
-          </figure>
           <div className="section-headline">
             <h2>Manicura y pedicura</h2>
             <p>Cuidado de manos y pies con acabado impecable.</p>
@@ -367,9 +375,6 @@ export default function HomePage() {
 
       <section className="section section-reveal" id="depilacion">
         <div className="container">
-          <figure className="section-image">
-            <img src={sectionImages.depilacion} alt="Depilación con cera y láser" loading="lazy" />
-          </figure>
           <div className="section-headline">
             <h2>Depilación: cera y láser</h2>
             <p>Opciones rápidas y efectivas según tu objetivo.</p>
@@ -407,9 +412,6 @@ export default function HomePage() {
 
       <section className="section section-reveal" id="mirada">
         <div className="container">
-          <figure className="section-image">
-            <img src={sectionImages.mirada} alt="Diseño de cejas y pestañas" loading="lazy" />
-          </figure>
           <div className="section-headline">
             <h2>Cejas y pestañas</h2>
             <p>Diseño de mirada con efecto natural y elegante.</p>
@@ -448,9 +450,6 @@ export default function HomePage() {
 
       <section className="section section-reveal" id="presoterapia">
         <div className="container">
-          <figure className="section-image">
-            <img src={sectionImages.presoterapia} alt="Sesión de presoterapia y bienestar" loading="lazy" />
-          </figure>
           <div className="list-card">
             <h2>Presoterapia</h2>
             <p>
