@@ -278,7 +278,7 @@ export default function HomePage() {
           <div className="hero-visual">
             <div className="hero-image-main">
               <Image src="/image5.png" alt="Tratamiento facial en centro de estética" fill priority sizes="560px" />
-              <div className="hero-caption">Centro de Estética · Huesca</div>
+              <div className="hero-caption">Centro de Estética · La Almunia</div>
             </div>
             <div className="hero-chip">+30 tratamientos</div>
           </div>
@@ -548,7 +548,8 @@ export default function HomePage() {
           <div className="location-card">
             <h2>Ubicación</h2>
             <p>
-              Estamos en Huesca. Pulsa el botón para abrir la ruta directa en Google Maps y llegar
+              Estamos en La Almunia de Doña Godina. Pulsa el botón para abrir la ruta directa en
+              Google Maps y llegar
               al centro sin complicaciones.
             </p>
             <div className="map-frame-wrap">
