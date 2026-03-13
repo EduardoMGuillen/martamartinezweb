@@ -161,6 +161,15 @@ const pestanas = [
   }
 ];
 
+const navLinks = [
+  { href: "#faciales", label: "Faciales" },
+  { href: "#manos-pies", label: "Manos y pies" },
+  { href: "#depilacion", label: "Depilación" },
+  { href: "#mirada", label: "Mirada" },
+  { href: "#presoterapia", label: "Presoterapia" },
+  { href: "#contacto", label: "Contacto" }
+];
+
 export default function HomePage() {
   return (
     <main>
@@ -188,6 +197,13 @@ export default function HomePage() {
           <a className="btn btn-secondary nav-btn" href="tel:+34676239789">
             Reservar cita
           </a>
+        </div>
+        <div className="container nav-menu">
+          {navLinks.map((item) => (
+            <a key={item.href} href={item.href}>
+              {item.label}
+            </a>
+          ))}
         </div>
       </header>
 
@@ -220,12 +236,13 @@ export default function HomePage() {
           <div className="hero-visual">
             <div className="hero-image-main">
               <Image src="/image5.png" alt="Tratamiento facial en centro de estética" fill priority sizes="560px" />
+              <div className="hero-caption">Centro de Estética · Huesca</div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section section-reveal">
+      <section className="section section-reveal" id="faciales">
         <div className="container">
           <h2>Tratamientos faciales</h2>
           <div className="services-grid">
@@ -271,7 +288,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section section-reveal">
+      <section className="section section-reveal" id="manos-pies">
         <div className="container">
           <h2>Manicura y pedicura</h2>
           <div className="two-columns">
@@ -303,7 +320,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section section-reveal">
+      <section className="section section-reveal" id="depilacion">
         <div className="container">
           <h2>Depilación: cera y láser</h2>
           <div className="two-columns">
@@ -337,7 +354,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section section-reveal">
+      <section className="section section-reveal" id="mirada">
         <div className="container">
           <h2>Cejas y pestañas</h2>
           <div className="two-columns">
@@ -372,7 +389,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section section-reveal">
+      <section className="section section-reveal" id="presoterapia">
         <div className="container">
           <div className="list-card">
             <h2>Presoterapia</h2>
@@ -412,7 +429,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section cta-section">
+      <section className="section cta-section" id="contacto">
         <div className="container cta-box section-reveal">
           <h2>Reserva tu cita</h2>
           <p>
