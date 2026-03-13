@@ -172,6 +172,7 @@ const navLinks = [
 ];
 
 const locationLink = "https://maps.app.goo.gl/ZmvSNEpq1qnQr2RX9";
+const locationAddress = "C. de Garay, 16, 50100 La Almunia de Doña Godina, Zaragoza, España";
 
 const visualBlocks = [
   {
@@ -193,6 +194,23 @@ const visualBlocks = [
       "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=1200&q=80"
   }
 ];
+
+const sideImages = {
+  faciales:
+    "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1200&q=80",
+  rituales:
+    "https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=1200&q=80",
+  boosters:
+    "https://images.unsplash.com/photo-1576426863848-c21f53c60b19?auto=format&fit=crop&w=1200&q=80",
+  manosPies:
+    "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80",
+  depilacion:
+    "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=1200&q=80",
+  mirada:
+    "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80",
+  presoterapia:
+    "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80"
+};
 
 export default function HomePage() {
   return (
@@ -285,193 +303,242 @@ export default function HomePage() {
 
       <section className="section section-reveal" id="faciales">
         <div className="container">
-          <div className="section-headline">
-            <h2>Tratamientos faciales</h2>
-            <p>Resultados visibles con protocolos adaptados a tu tipo de piel.</p>
-          </div>
-          <div className="services-grid">
-            {faciales.map((service) => (
-              <article className="service-card" key={service.title}>
-                <h3>{service.title}</h3>
-                <p className="compact-text">{service.description}</p>
-                <strong>{service.price}</strong>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-reveal">
-        <div className="container">
-          <div className="section-headline">
-            <h2>Rituales sensoriales</h2>
-            <p>Bienestar mental y corporal en sesiones envolventes.</p>
-          </div>
-          <div className="services-grid">
-            {rituales.map((service) => (
-              <article className="service-card" key={service.title}>
-                <h3>{service.title}</h3>
-                <p className="compact-text">{service.description}</p>
-                <p className="meta-line">Duración: {service.duration}</p>
-                <strong>Precio recomendado: {service.price}</strong>
-              </article>
-            ))}
-          </div>
-          <p className="section-note">Experiencia sensorial premium disponible bajo cita previa.</p>
-        </div>
-      </section>
-
-      <section className="section section-reveal">
-        <div className="container">
-          <div className="section-headline">
-            <h2>Boosters faciales</h2>
-            <p>Complementos para potenciar cualquier tratamiento.</p>
-          </div>
-          <div className="list-card">
-            {boosters.map((item) => (
-              <div className="line-item" key={item.name}>
-                <span>{item.name}</span>
-                <strong>{item.price}</strong>
+          <div className="section-split">
+            <figure className="side-image">
+              <img src={sideImages.faciales} alt="Tratamiento facial estético" loading="lazy" />
+            </figure>
+            <div className="section-content">
+              <div className="section-headline">
+                <h2>Tratamientos faciales</h2>
+                <p>Resultados visibles con protocolos adaptados a tu tipo de piel.</p>
               </div>
-            ))}
+              <div className="services-grid">
+                {faciales.map((service) => (
+                  <article className="service-card" key={service.title}>
+                    <h3>{service.title}</h3>
+                    <p className="compact-text">{service.description}</p>
+                    <strong>{service.price}</strong>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-reveal">
+        <div className="container">
+          <div className="section-split reverse">
+            <figure className="side-image">
+              <img src={sideImages.rituales} alt="Rituales sensoriales relajantes" loading="lazy" />
+            </figure>
+            <div className="section-content">
+              <div className="section-headline">
+                <h2>Rituales sensoriales</h2>
+                <p>Bienestar mental y corporal en sesiones envolventes.</p>
+              </div>
+              <div className="services-grid">
+                {rituales.map((service) => (
+                  <article className="service-card" key={service.title}>
+                    <h3>{service.title}</h3>
+                    <p className="compact-text">{service.description}</p>
+                    <p className="meta-line">Duración: {service.duration}</p>
+                    <strong>Precio recomendado: {service.price}</strong>
+                  </article>
+                ))}
+              </div>
+              <p className="section-note">Experiencia sensorial premium disponible bajo cita previa.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-reveal">
+        <div className="container">
+          <div className="section-split">
+            <figure className="side-image">
+              <img src={sideImages.boosters} alt="Cosmética y boosters faciales" loading="lazy" />
+            </figure>
+            <div className="section-content">
+              <div className="section-headline">
+                <h2>Boosters faciales</h2>
+                <p>Complementos para potenciar cualquier tratamiento.</p>
+              </div>
+              <div className="list-card">
+                {boosters.map((item) => (
+                  <div className="line-item" key={item.name}>
+                    <span>{item.name}</span>
+                    <strong>{item.price}</strong>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="section section-reveal" id="manos-pies">
         <div className="container">
-          <div className="section-headline">
-            <h2>Manicura y pedicura</h2>
-            <p>Cuidado de manos y pies con acabado impecable.</p>
-          </div>
-          <div className="two-columns">
-            <article className="list-card">
-              <h3>Manicura</h3>
-              {manicura.map((item) => (
-                <div className="line-block" key={item.name}>
-                  <div className="line-item">
-                    <span>{item.name}</span>
-                    <strong>{item.price}</strong>
-                  </div>
-                  <p>{item.detail}</p>
-                </div>
-              ))}
-            </article>
-            <article className="list-card">
-              <h3>Pedicura</h3>
-              {pedicura.map((item) => (
-                <div className="line-block" key={item.name}>
-                  <div className="line-item">
-                    <span>{item.name}</span>
-                    <strong>{item.price}</strong>
-                  </div>
-                  <p>{item.detail}</p>
-                </div>
-              ))}
-            </article>
+          <div className="section-split reverse">
+            <figure className="side-image">
+              <img src={sideImages.manosPies} alt="Manicura y pedicura profesional" loading="lazy" />
+            </figure>
+            <div className="section-content">
+              <div className="section-headline">
+                <h2>Manicura y pedicura</h2>
+                <p>Cuidado de manos y pies con acabado impecable.</p>
+              </div>
+              <div className="two-columns">
+                <article className="list-card">
+                  <h3>Manicura</h3>
+                  {manicura.map((item) => (
+                    <div className="line-block" key={item.name}>
+                      <div className="line-item">
+                        <span>{item.name}</span>
+                        <strong>{item.price}</strong>
+                      </div>
+                      <p>{item.detail}</p>
+                    </div>
+                  ))}
+                </article>
+                <article className="list-card">
+                  <h3>Pedicura</h3>
+                  {pedicura.map((item) => (
+                    <div className="line-block" key={item.name}>
+                      <div className="line-item">
+                        <span>{item.name}</span>
+                        <strong>{item.price}</strong>
+                      </div>
+                      <p>{item.detail}</p>
+                    </div>
+                  ))}
+                </article>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="section section-reveal" id="depilacion">
         <div className="container">
-          <div className="section-headline">
-            <h2>Depilación: cera y láser</h2>
-            <p>Opciones rápidas y efectivas según tu objetivo.</p>
-          </div>
-          <div className="two-columns">
-            <article className="list-card">
-              <h3>Depilación con cera</h3>
-              {cera.map((item) => (
-                <div className="line-item" key={item.service}>
-                  <span>{item.service}</span>
-                  <strong>{item.price}</strong>
-                </div>
-              ))}
-              <p className="section-note">Consultar packs combinados.</p>
-            </article>
-            <article className="list-card">
-              <h3>Depilación láser SHR</h3>
-              <p>
-                Servicio realizado por profesional especializada con tecnología SHR, indoloro,
-                seguro y eficaz para todo tipo de pieles.
-              </p>
-              <div className="line-item">
-                <span>Cuerpo completo mujer</span>
-                <strong>109 €</strong>
+          <div className="section-split">
+            <figure className="side-image">
+              <img src={sideImages.depilacion} alt="Depilación con cera y láser" loading="lazy" />
+            </figure>
+            <div className="section-content">
+              <div className="section-headline">
+                <h2>Depilación: cera y láser</h2>
+                <p>Opciones rápidas y efectivas según tu objetivo.</p>
               </div>
-              <div className="line-item">
-                <span>Cuerpo completo hombre</span>
-                <strong>149 €</strong>
+              <div className="two-columns">
+                <article className="list-card">
+                  <h3>Depilación con cera</h3>
+                  {cera.map((item) => (
+                    <div className="line-item" key={item.service}>
+                      <span>{item.service}</span>
+                      <strong>{item.price}</strong>
+                    </div>
+                  ))}
+                  <p className="section-note">Consultar packs combinados.</p>
+                </article>
+                <article className="list-card">
+                  <h3>Depilación láser SHR</h3>
+                  <p>
+                    Servicio realizado por profesional especializada con tecnología SHR, indoloro,
+                    seguro y eficaz para todo tipo de pieles.
+                  </p>
+                  <div className="line-item">
+                    <span>Cuerpo completo mujer</span>
+                    <strong>109 €</strong>
+                  </div>
+                  <div className="line-item">
+                    <span>Cuerpo completo hombre</span>
+                    <strong>149 €</strong>
+                  </div>
+                  <p className="section-note">Para zonas individuales, consultar directamente.</p>
+                </article>
               </div>
-              <p className="section-note">Para zonas individuales, consultar directamente.</p>
-            </article>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="section section-reveal" id="mirada">
         <div className="container">
-          <div className="section-headline">
-            <h2>Cejas y pestañas</h2>
-            <p>Diseño de mirada con efecto natural y elegante.</p>
-          </div>
-          <div className="two-columns">
-            <article className="list-card">
-              <h3>Cejas | Diseño y color</h3>
-              <p>
-                Realzamos tu mirada con un diseño adaptado a tus facciones y estilo natural.
-              </p>
-              {cejas.map((item) => (
-                <div className="line-block" key={item.name}>
-                  <div className="line-item">
-                    <span>{item.name}</span>
-                    <strong>{item.price}</strong>
-                  </div>
-                  <p>{item.detail}</p>
-                </div>
-              ))}
-            </article>
-            <article className="list-card">
-              <h3>Pestañas</h3>
-              {pestanas.map((item) => (
-                <div className="line-block" key={item.name}>
-                  <div className="line-item">
-                    <span>{item.name}</span>
-                    <strong>{item.price}</strong>
-                  </div>
-                  <p>{item.detail}</p>
-                </div>
-              ))}
-            </article>
+          <div className="section-split reverse">
+            <figure className="side-image">
+              <img src={sideImages.mirada} alt="Diseño de cejas y pestañas" loading="lazy" />
+            </figure>
+            <div className="section-content">
+              <div className="section-headline">
+                <h2>Cejas y pestañas</h2>
+                <p>Diseño de mirada con efecto natural y elegante.</p>
+              </div>
+              <div className="two-columns">
+                <article className="list-card">
+                  <h3>Cejas | Diseño y color</h3>
+                  <p>
+                    Realzamos tu mirada con un diseño adaptado a tus facciones y estilo natural.
+                  </p>
+                  {cejas.map((item) => (
+                    <div className="line-block" key={item.name}>
+                      <div className="line-item">
+                        <span>{item.name}</span>
+                        <strong>{item.price}</strong>
+                      </div>
+                      <p>{item.detail}</p>
+                    </div>
+                  ))}
+                </article>
+                <article className="list-card">
+                  <h3>Pestañas</h3>
+                  {pestanas.map((item) => (
+                    <div className="line-block" key={item.name}>
+                      <div className="line-item">
+                        <span>{item.name}</span>
+                        <strong>{item.price}</strong>
+                      </div>
+                      <p>{item.detail}</p>
+                    </div>
+                  ))}
+                </article>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="section section-reveal" id="presoterapia">
         <div className="container">
-          <div className="list-card">
-            <h2>Presoterapia</h2>
-            <p>
-              Tratamiento de drenaje linfático mediante presión de aire para mejorar circulación,
-              reducir retención de líquidos y combatir celulitis. Muy recomendada para deportistas
-              por su ayuda en recuperación muscular y eliminación de toxinas.
-            </p>
-            <div className="line-item">
-              <span>Sesión 30 min (piernas, abdomen o brazos)</span>
-              <strong>15 €</strong>
+          <div className="section-split">
+            <figure className="side-image">
+              <img src={sideImages.presoterapia} alt="Presoterapia y recuperación corporal" loading="lazy" />
+            </figure>
+            <div className="section-content">
+              <div className="list-card">
+                <h2>Presoterapia</h2>
+                <p>
+                  Tratamiento de drenaje linfático mediante presión de aire para mejorar
+                  circulación, reducir retención de líquidos y combatir celulitis. Muy recomendada
+                  para deportistas por su ayuda en recuperación muscular y eliminación de toxinas.
+                </p>
+                <div className="line-item">
+                  <span>Sesión 30 min (piernas, abdomen o brazos)</span>
+                  <strong>15 €</strong>
+                </div>
+                <div className="line-item">
+                  <span>Sesiones de 40 min</span>
+                  <strong>Aprox. 20 €</strong>
+                </div>
+                <div className="line-item">
+                  <span>Presoterapia + vendas frías Arosa</span>
+                  <strong>35 €</strong>
+                </div>
+                <p className="section-note">
+                  Opciones adicionales: presoterapia ocular y cuerpo completo (consultar precio).
+                </p>
+              </div>
             </div>
-            <div className="line-item">
-              <span>Sesiones de 40 min</span>
-              <strong>Aprox. 20 €</strong>
-            </div>
-            <div className="line-item">
-              <span>Presoterapia + vendas frías Arosa</span>
-              <strong>35 €</strong>
-            </div>
-            <p className="section-note">
-              Opciones adicionales: presoterapia ocular y cuerpo completo (consultar precio).
-            </p>
           </div>
         </div>
       </section>
@@ -487,18 +554,13 @@ export default function HomePage() {
             <div className="map-frame-wrap">
               <iframe
                 title="Mapa interactivo de ubicación"
-                src={`https://www.google.com/maps?q=${encodeURIComponent(locationLink)}&output=embed`}
+                src={`https://www.google.com/maps?output=embed&q=${encodeURIComponent(locationAddress)}`}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 allowFullScreen
               />
             </div>
-            <a
-              className="btn btn-primary"
-              href={locationLink}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a className="btn btn-primary" href={locationLink} target="_blank" rel="noreferrer">
               Abrir ubicación
             </a>
           </div>
