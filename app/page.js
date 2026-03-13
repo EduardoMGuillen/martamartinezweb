@@ -171,6 +171,8 @@ const navLinks = [
   { href: "#contacto", label: "Contacto" }
 ];
 
+const locationLink = "https://maps.app.goo.gl/ZmvSNEpq1qnQr2RX9";
+
 const sectionImages = {
   faciales:
     "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1800&q=80",
@@ -483,9 +485,18 @@ export default function HomePage() {
               Estamos en Huesca. Pulsa el botón para abrir la ruta directa en Google Maps y llegar
               al centro sin complicaciones.
             </p>
+            <div className="map-frame-wrap">
+              <iframe
+                title="Mapa interactivo de ubicación"
+                src={`https://www.google.com/maps?q=${encodeURIComponent(locationLink)}&output=embed`}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
             <a
               className="btn btn-primary"
-              href="https://maps.app.goo.gl/ZmvSNEpq1qnQr2RX9"
+              href={locationLink}
               target="_blank"
               rel="noreferrer"
             >
