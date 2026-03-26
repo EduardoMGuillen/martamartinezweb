@@ -194,12 +194,12 @@ const visualBlocks = [
 
 const sideImages = {
   faciales: "/Fotos/49c07f8d-f016-4e03-8ae4-6b30a9ecc27d.jpg",
-  rituales: "/Fotos/49c07f8d-f016-4e03-8ae4-6b30a9ecc27d.jpg",
+  rituales: "/Fotos/a02b8207-9358-4065-8fcf-92218e61cc45.jpg",
   boosters: "/Fotos/3345c6ed-53ff-44f9-bd89-679335477ff6.jpg",
   manosPies: "/Fotos/218fdc1a-566e-490a-ad58-910ae9b80b9f.jpg",
-  depilacion: "/Fotos/5f01ce96-a222-493c-b3e9-44bc0d0cfecf.jpg",
+  depilacion: "/Fotos/53c552fa-c377-4164-8b50-7114d0e2e4f5.jpg",
   mirada: "/Fotos/8a4f4f26-04f5-4ce8-8f4f-2fc879ebb321.jpg",
-  presoterapia: "/Fotos/49c07f8d-f016-4e03-8ae4-6b30a9ecc27d.jpg"
+  presoterapia: "/Fotos/3937e119-3291-4d2b-99b3-e9e200f5097d.jpg"
 };
 
 export default function HomePage() {
@@ -268,7 +268,7 @@ export default function HomePage() {
           <div className="hero-visual">
             <div className="hero-image-main">
               <Image
-                src="/Fotos/49c07f8d-f016-4e03-8ae4-6b30a9ecc27d.jpg"
+                src="/Fotos/ad2a20d3-1384-4ea6-b056-6b6b6396c0ff.jpg"
                 alt="Tratamiento facial en centro de estética"
                 fill
                 priority
