@@ -198,8 +198,8 @@ const sideImages = {
   boosters: "/Fotos/3345c6ed-53ff-44f9-bd89-679335477ff6.jpg",
   manosPies: "/Fotos/218fdc1a-566e-490a-ad58-910ae9b80b9f.jpg",
   depilacion: "/Fotos/53c552fa-c377-4164-8b50-7114d0e2e4f5.jpg",
-  mirada: "/Fotos/8a4f4f26-04f5-4ce8-8f4f-2fc879ebb321.jpg",
-  presoterapia: "/Fotos/3937e119-3291-4d2b-99b3-e9e200f5097d.jpg"
+  mirada: "/Fotos/a3108321-461f-43b6-8bee-68180c52ef26.jpg",
+  presoterapia: "/Fotos/8367f603-6886-4d45-b9d6-70b479a97cf4.jpg"
 };
 
 export default function HomePage() {
