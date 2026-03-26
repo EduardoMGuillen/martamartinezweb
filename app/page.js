@@ -599,6 +599,18 @@ export default function HomePage() {
               WhatsApp +34 676 23 97 89
             </a>
           </div>
+          <footer className="site-footer">
+            <small>
+              Powered by{" "}
+              <a
+                href="https://www.nexusglobalsuministros.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Nexus Global
+              </a>
+            </small>
+          </footer>
         </div>
       </section>
     </main>
