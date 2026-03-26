@@ -178,38 +178,28 @@ const visualBlocks = [
   {
     title: "Rituales Faciales",
     subtitle: "Luminosidad y piel renovada",
-    image:
-      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80"
+    image: "/Fotos/ff443d6d-672c-4db8-9692-50ba212d245c.jpg"
   },
   {
     title: "Manos y Pies",
     subtitle: "Detalles que elevan tu imagen",
-    image:
-      "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1200&q=80"
+    image: "/Fotos/218fdc1a-566e-490a-ad58-910ae9b80b9f.jpg"
   },
   {
     title: "Mirada Perfecta",
     subtitle: "Cejas y pestañas con diseño",
-    image:
-      "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=1200&q=80"
+    image: "/Fotos/dd4f25dc-4e91-404a-9450-050fb7def3e6.jpg"
   }
 ];
 
 const sideImages = {
-  faciales:
-    "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1200&q=80",
-  rituales:
-    "https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=1200&q=80",
-  boosters:
-    "https://images.unsplash.com/photo-1576426863848-c21f53c60b19?auto=format&fit=crop&w=1200&q=80",
-  manosPies:
-    "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80",
-  depilacion:
-    "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=1200&q=80",
-  mirada:
-    "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80",
-  presoterapia:
-    "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80"
+  faciales: "/Fotos/49c07f8d-f016-4e03-8ae4-6b30a9ecc27d.jpg",
+  rituales: "/Fotos/49c07f8d-f016-4e03-8ae4-6b30a9ecc27d.jpg",
+  boosters: "/Fotos/3345c6ed-53ff-44f9-bd89-679335477ff6.jpg",
+  manosPies: "/Fotos/218fdc1a-566e-490a-ad58-910ae9b80b9f.jpg",
+  depilacion: "/Fotos/5f01ce96-a222-493c-b3e9-44bc0d0cfecf.jpg",
+  mirada: "/Fotos/8a4f4f26-04f5-4ce8-8f4f-2fc879ebb321.jpg",
+  presoterapia: "/Fotos/49c07f8d-f016-4e03-8ae4-6b30a9ecc27d.jpg"
 };
 
 export default function HomePage() {
@@ -277,7 +267,13 @@ export default function HomePage() {
 
           <div className="hero-visual">
             <div className="hero-image-main">
-              <Image src="/image5.png" alt="Tratamiento facial en centro de estética" fill priority sizes="560px" />
+              <Image
+                src="/Fotos/49c07f8d-f016-4e03-8ae4-6b30a9ecc27d.jpg"
+                alt="Tratamiento facial en centro de estética"
+                fill
+                priority
+                sizes="560px"
+              />
               <div className="hero-caption">Centro de Estética · La Almunia</div>
             </div>
             <div className="hero-chip">+30 tratamientos</div>
