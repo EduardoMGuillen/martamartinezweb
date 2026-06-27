@@ -1,175 +1,5 @@
 import Image from "next/image";
-
-const faciales = [
-  {
-    title: "Custom Skin",
-    description:
-      "Tratamiento facial totalmente personalizado y adaptado a las necesidades específicas de cada piel. Incluye diagnóstico previo y selección de activos.",
-    price: "Desde 50 €"
-  },
-  {
-    title: "Citrus Vita Essence",
-    description:
-      "Tratamiento iluminador y antioxidante a base de Vitamina C. Aporta vitalidad, luminosidad y unifica el tono de la piel.",
-    price: "Desde 70 €"
-  },
-  {
-    title: "3D Collagen Revolution",
-    description:
-      "Tratamiento reafirmante y regenerador que estimula la producción de colágeno. Incluye exfoliación y un cóctel de vitaminas para rellenar, reafirmar y mejorar la textura de la piel.",
-    price: "Desde 80 €"
-  },
-  {
-    title: "The Cure",
-    description:
-      "Cura intensiva para la piel que combina terapia facial, cargas energéticas e hidratación profunda. Ideal para pieles deshidratadas, estresadas o desvitalizadas.",
-    price: "Desde 70 €"
-  },
-  {
-    title: "Pure Skin Ritual",
-    description:
-      "Limpieza facial profunda mediante ultrasonidos. Purifica, oxigena y prepara la piel para recibir tratamientos posteriores.",
-    price: "Desde 45 €"
-  }
-];
-
-const rituales = [
-  {
-    title: "Susurros de Calma",
-    description:
-      "Masaje craneal y facial profundamente relajante. Enfocado en liberar tensiones y calmar el sistema nervioso.",
-    duration: "30 minutos",
-    price: "30 €"
-  },
-  {
-    title: "Despierta Tus Sentidos",
-    description:
-      "Tratamiento holístico de aromaterapia diseñado para reconectar cuerpo y mente. Incluye limpieza facial, arcillas, infusiones y ritual sensorial.",
-    duration: "60 minutos",
-    price: "60 €"
-  }
-];
-
-const boosters = [
-  { name: "Vitamina C", price: "+20 €" },
-  { name: "Cóctel de vitaminas", price: "+20 €" },
-  { name: "Glicólicos (exfoliación química)", price: "+20 €" },
-  { name: "Microcorrientes", price: "+20 €" },
-  { name: "Gimnasia pasiva para la piel", price: "+20 €" },
-  { name: "Ultrasonidos", price: "+15 €" },
-  { name: "Presoterapia en abdomen y piernas", price: "+10 €" }
-];
-
-const manicura = [
-  {
-    name: "Cortar y limar",
-    detail: "Arreglo básico de uñas para un acabado limpio y cuidado.",
-    price: "18 €"
-  },
-  {
-    name: "Manicura semipermanente",
-    detail: "Esmaltado de larga duración con acabado brillante y resistente.",
-    price: "22 €"
-  },
-  {
-    name: "Retirada de esmalte semipermanente",
-    detail: "Servicio adicional.",
-    price: "+5 €"
-  },
-  {
-    name: "Diseños nail art",
-    detail: "Suplemento por decoración.",
-    price: "1 € cada 2 uñas"
-  },
-  {
-    name: "Manicura Spa Deluxe",
-    detail:
-      "Ritual completo con preparación de uñas, exfoliación, hidratación profunda y masaje relajante.",
-    price: "35 €"
-  }
-];
-
-const pedicura = [
-  {
-    name: "Cortar y limar",
-    detail: "Arreglo básico de uñas para un acabado limpio y cuidado.",
-    price: "18 €"
-  },
-  {
-    name: "Pedicura con esmaltado",
-    detail: "Incluye cuidado de uñas y esmaltado para un acabado duradero.",
-    price: "25 €"
-  },
-  {
-    name: "Retirada de esmalte semipermanente",
-    detail: "Servicio adicional.",
-    price: "+5 €"
-  },
-  {
-    name: "Pedicura Premium",
-    detail:
-      "Tratamiento completo con preparación de uñas, eliminación de durezas, exfoliación, hidratación profunda y masaje relajante, finalizando con esmaltado.",
-    price: "38 €"
-  }
-];
-
-const cera = [
-  { service: "Piernas completas", price: "20 €" },
-  { service: "Medias piernas", price: "10 €" },
-  { service: "Ingles normales", price: "12 €" },
-  { service: "Ingles completas", price: "18 €" },
-  { service: "Brazos completos", price: "18 €" },
-  { service: "Pecho y abdomen", price: "20 €" },
-  { service: "Espalda completa", price: "20 €" },
-  { service: "Labio", price: "5 €" },
-  { service: "Facial", price: "15 €" }
-];
-
-const cejas = [
-  {
-    name: "Diseño de cejas personalizado",
-    detail: "Depilación y definición según forma del rostro.",
-    price: "8 €"
-  },
-  {
-    name: "Tinte de cejas",
-    detail: "Aporta intensidad y definición para una mirada más marcada.",
-    price: "15 €"
-  },
-  {
-    name: "Diseño + tinte de cejas",
-    detail: "El combo perfecto para cejas definidas y con mayor profundidad.",
-    price: "25 €"
-  },
-  {
-    name: "Primera visita / Asesoramiento de cejas",
-    detail: "Sesión de 20 min con análisis y recomendación personalizada.",
-    price: "12 €"
-  }
-];
-
-const pestanas = [
-  {
-    name: "Lifting de pestañas + tinte",
-    detail: "Eleva, curva y oscurece la pestaña natural. Duración aproximada: 2 meses.",
-    price: "45 €"
-  },
-  {
-    name: "Tinte de pestañas",
-    detail: "Coloración semipermanente que intensifica el tono natural.",
-    price: "15 €"
-  }
-];
-
-const navLinks = [
-  { href: "#faciales", label: "Faciales" },
-  { href: "#manos-pies", label: "Manos y pies" },
-  { href: "#depilacion", label: "Depilación" },
-  { href: "#mirada", label: "Mirada" },
-  { href: "#presoterapia", label: "Presoterapia" },
-  { href: "#ubicacion", label: "Ubicación" },
-  { href: "#contacto", label: "Contacto" }
-];
+import Link from "next/link";
 
 const locationLink = "https://maps.app.goo.gl/ZmvSNEpq1qnQr2RX9";
 const locationAddress = "C. de Garay, 16, 50100 La Almunia de Doña Godina, Zaragoza, España";
@@ -192,75 +22,25 @@ const visualBlocks = [
   }
 ];
 
-const sideImages = {
-  faciales: "/Fotos/49c07f8d-f016-4e03-8ae4-6b30a9ecc27d.jpg",
-  rituales: "/Fotos/a02b8207-9358-4065-8fcf-92218e61cc45.jpg",
-  boosters: "/Fotos/3345c6ed-53ff-44f9-bd89-679335477ff6.jpg",
-  manosPies: "/Fotos/218fdc1a-566e-490a-ad58-910ae9b80b9f.jpg",
-  depilacion: "/Fotos/53c552fa-c377-4164-8b50-7114d0e2e4f5.jpg",
-  mirada: "/Fotos/a3108321-461f-43b6-8bee-68180c52ef26.jpg",
-  presoterapia: "/Fotos/8367f603-6886-4d45-b9d6-70b479a97cf4.jpg"
-};
-
 export default function HomePage() {
   return (
     <main>
-      <a
-        className="floating-whatsapp"
-        href="https://wa.me/34676239789?text=Hola%2C%20quiero%20información%20sobre%20los%20tratamientos."
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Contactar por WhatsApp"
-      >
-        WhatsApp +34 676 23 97 89
-      </a>
-
-      <header className="nav-wrap">
-        <div className="container nav">
-          <div className="brand">
-            <div className="brand-logo">
-              <Image src="/logo.jpg" alt="Logo del centro" fill sizes="54px" />
-            </div>
-            <div className="brand-text">
-              <span>Centro de Estética</span>
-              <small>Tratamientos faciales y corporales</small>
-            </div>
-          </div>
-          <a className="btn btn-secondary nav-btn" href="tel:+34676239789">
-            Llamar +34 676 23 97 89
-          </a>
-        </div>
-        <div className="container nav-menu">
-          {navLinks.map((item) => (
-            <a key={item.href} href={item.href}>
-              {item.label}
-            </a>
-          ))}
-        </div>
-      </header>
-
       <section className="hero section section-reveal">
         <div className="container hero-grid">
           <div className="hero-content">
-            <p className="eyebrow">Carta de servicios</p>
+            <p className="eyebrow">Maquillaje y estética · La Almunia</p>
             <h1>Belleza, bienestar y cuidado profesional en un solo espacio.</h1>
             <p className="hero-copy">
-              Hemos incorporado todos los tratamientos faciales, rituales sensoriales, manos,
-              pies, depilación, mirada y presoterapia para que puedas consultar opciones y precios
-              de forma clara.
+              Maquillaje, tratamientos faciales y corporales, manos, pies, depilación y mirada.
+              Una experiencia cuidada y personalizada para cada piel.
             </p>
             <div className="hero-cta">
-              <a className="btn btn-primary" href="tel:+34676239789">
-                Llamar ahora
-              </a>
-              <a
-                className="btn btn-secondary"
-                href="https://wa.me/34676239789"
-                target="_blank"
-                rel="noreferrer"
-              >
-                WhatsApp +34 676 23 97 89
-              </a>
+              <Link className="btn btn-primary" href="/glow-reset">
+                Glow Reset 360° · 199 €
+              </Link>
+              <Link className="btn btn-secondary" href="/servicios">
+                Ver servicios y precios
+              </Link>
             </div>
             <p className="hero-location">Atención personalizada con cita previa.</p>
           </div>
@@ -274,292 +54,110 @@ export default function HomePage() {
                 priority
                 sizes="560px"
               />
-              <div className="hero-caption">Centro de Estética · La Almunia</div>
+              <div className="hero-caption">Marta Martínez Sáez · La Almunia</div>
             </div>
-            <div className="hero-chip">+30 tratamientos</div>
+            <div className="hero-chip">+30 servicios</div>
+          </div>
+        </div>
+      </section>
+
+      {/* Ofertas destacadas pensadas para reservar al momento */}
+      <section className="section section-reveal">
+        <div className="container">
+          <div className="section-headline center-headline">
+            <p className="eyebrow">Ofertas destacadas</p>
+            <h2>Resérvalo en un minuto</h2>
+            <p>Lo más pedido del centro, listo para reservar por WhatsApp ahora mismo.</p>
+          </div>
+
+          <div className="offer-duo">
+            {/* Glow Reset 360° */}
+            <article className="offer-card offer-card-glow">
+              <div className="offer-card-media">
+                <img src="/Fotos/49c07f8d-f016-4e03-8ae4-6b30a9ecc27d.jpg" alt="Glow Reset 360°" loading="lazy" />
+                <span className="offer-urgency">⏳ Oferta por tiempo limitado · plazas limitadas</span>
+              </div>
+              <div className="offer-card-body">
+                <div className="offer-rating">
+                  <span aria-hidden="true">★★★★★</span>
+                  <small>El tratamiento más reservado</small>
+                </div>
+                <h3 className="offer-card-title">Glow Reset 360°</h3>
+                <p className="offer-card-text">
+                  Tres tratamientos en una experiencia facial completa: reinicia, ilumina y
+                  reafirma tu piel en una sola sesión.
+                </p>
+                <div className="offer-price">
+                  <span className="offer-price-old">
+                    Antes <s>285 €</s>
+                  </span>
+                  <div className="offer-price-now">
+                    <span className="offer-price-amount">199 €</span>
+                    <span className="offer-save">Ahorras 86 € · −30%</span>
+                  </div>
+                </div>
+                <Link className="btn btn-primary offer-cta" href="/glow-reset">
+                  Reservar ahora
+                </Link>
+                <span className="offer-reassure">Reserva sin compromiso por WhatsApp</span>
+              </div>
+            </article>
+
+            {/* Tarjetas de regalo */}
+            <article className="offer-card offer-card-gift">
+              <div className="offer-card-media">
+                <img src="/Fotos/220712c8-68c6-4aa3-b666-c5a09df46562.jpg" alt="Tarjetas de regalo" loading="lazy" />
+                <span className="offer-urgency offer-urgency-gold">🎁 El regalo perfecto, en 1 minuto</span>
+              </div>
+              <div className="offer-card-body">
+                <div className="offer-rating">
+                  <span aria-hidden="true">★★★★★</span>
+                  <small>Listas para sorprender</small>
+                </div>
+                <h3 className="offer-card-title">Tarjetas de regalo</h3>
+                <p className="offer-card-text">
+                  Elige un diseño, resérvala online y pásate a recogerla en tienda. Sin pago
+                  online: pagas al recogerla.
+                </p>
+                <div className="offer-price">
+                  <div className="offer-price-now">
+                    <span className="offer-price-amount">Desde 25 €</span>
+                    <span className="offer-save offer-save-gold">Cualquier servicio</span>
+                  </div>
+                </div>
+                <Link className="btn btn-primary offer-cta" href="/tarjetas-regalo">
+                  Regalar ahora
+                </Link>
+                <span className="offer-reassure">Recogida en tienda · diseño a elegir</span>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
       <section className="section section-reveal">
         <div className="container">
+          <div className="section-headline center-headline">
+            <p className="eyebrow">Nuestra carta de servicios</p>
+            <h2>Pulsa una categoría para ver tratamientos y precios</h2>
+            <p>Toca cualquier imagen para abrir la carta completa con todos los detalles.</p>
+          </div>
           <div className="visual-grid">
             {visualBlocks.map((item) => (
-              <article className="visual-card" key={item.title}>
+              <Link className="visual-card" key={item.title} href="/servicios">
                 <img src={item.image} alt={item.title} loading="lazy" />
                 <div className="visual-overlay">
                   <h3>{item.title}</h3>
                   <p>{item.subtitle}</p>
+                  <span className="visual-cta">Ver carta de servicios →</span>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="section section-reveal" id="faciales">
-        <div className="container">
-          <div className="section-split">
-            <figure className="side-image">
-              <img src={sideImages.faciales} alt="Tratamiento facial estético" loading="lazy" />
-            </figure>
-            <div className="section-content">
-              <div className="section-headline">
-                <h2>Tratamientos faciales</h2>
-                <p>Resultados visibles con protocolos adaptados a tu tipo de piel.</p>
-              </div>
-              <div className="services-grid">
-                {faciales.map((service) => (
-                  <article className="service-card" key={service.title}>
-                    <h3>{service.title}</h3>
-                    <p className="compact-text">{service.description}</p>
-                    <strong>{service.price}</strong>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-reveal">
-        <div className="container">
-          <div className="section-split reverse">
-            <figure className="side-image">
-              <img src={sideImages.rituales} alt="Rituales sensoriales relajantes" loading="lazy" />
-            </figure>
-            <div className="section-content">
-              <div className="section-headline">
-                <h2>Rituales sensoriales</h2>
-                <p>Bienestar mental y corporal en sesiones envolventes.</p>
-              </div>
-              <div className="services-grid">
-                {rituales.map((service) => (
-                  <article className="service-card" key={service.title}>
-                    <h3>{service.title}</h3>
-                    <p className="compact-text">{service.description}</p>
-                    <p className="meta-line">Duración: {service.duration}</p>
-                    <strong>Precio recomendado: {service.price}</strong>
-                  </article>
-                ))}
-              </div>
-              <p className="section-note">Experiencia sensorial premium disponible bajo cita previa.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-reveal">
-        <div className="container">
-          <div className="section-split">
-            <figure className="side-image">
-              <img src={sideImages.boosters} alt="Cosmética y boosters faciales" loading="lazy" />
-            </figure>
-            <div className="section-content">
-              <div className="section-headline">
-                <h2>Boosters faciales</h2>
-                <p>Complementos para potenciar cualquier tratamiento.</p>
-              </div>
-              <div className="list-card">
-                {boosters.map((item) => (
-                  <div className="line-item" key={item.name}>
-                    <span>{item.name}</span>
-                    <strong>{item.price}</strong>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-reveal" id="manos-pies">
-        <div className="container">
-          <div className="section-split reverse">
-            <figure className="side-image">
-              <img src={sideImages.manosPies} alt="Manicura y pedicura profesional" loading="lazy" />
-            </figure>
-            <div className="section-content">
-              <div className="section-headline">
-                <h2>Manicura y pedicura</h2>
-                <p>Cuidado de manos y pies con acabado impecable.</p>
-              </div>
-              <div className="two-columns">
-                <article className="list-card">
-                  <h3>Manicura</h3>
-                  {manicura.map((item) => (
-                    <div className="line-block" key={item.name}>
-                      <div className="line-item">
-                        <span>{item.name}</span>
-                        <strong>{item.price}</strong>
-                      </div>
-                      <p>{item.detail}</p>
-                    </div>
-                  ))}
-                </article>
-                <article className="list-card">
-                  <h3>Pedicura</h3>
-                  {pedicura.map((item) => (
-                    <div className="line-block" key={item.name}>
-                      <div className="line-item">
-                        <span>{item.name}</span>
-                        <strong>{item.price}</strong>
-                      </div>
-                      <p>{item.detail}</p>
-                    </div>
-                  ))}
-                </article>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-reveal" id="depilacion">
-        <div className="container">
-          <div className="section-split">
-            <figure className="side-image">
-              <img src={sideImages.depilacion} alt="Depilación con cera y láser" loading="lazy" />
-            </figure>
-            <div className="section-content">
-              <div className="section-headline">
-                <h2>Depilación: cera y láser</h2>
-                <p>Opciones rápidas y efectivas según tu objetivo.</p>
-              </div>
-              <div className="two-columns">
-                <article className="list-card">
-                  <h3>Depilación con cera</h3>
-                  {cera.map((item) => (
-                    <div className="line-item" key={item.service}>
-                      <span>{item.service}</span>
-                      <strong>{item.price}</strong>
-                    </div>
-                  ))}
-                  <p className="section-note">Consultar packs combinados.</p>
-                </article>
-                <article className="list-card">
-                  <h3>Depilación láser SHR</h3>
-                  <p>
-                    Servicio realizado por profesional especializada con tecnología SHR, indoloro,
-                    seguro y eficaz para todo tipo de pieles.
-                  </p>
-                  <div className="line-item">
-                    <span>Cuerpo completo mujer</span>
-                    <strong>109 €</strong>
-                  </div>
-                  <div className="line-item">
-                    <span>Cuerpo completo hombre</span>
-                    <strong>149 €</strong>
-                  </div>
-                  <p className="section-note">Para zonas individuales, consultar directamente.</p>
-                </article>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-reveal" id="mirada">
-        <div className="container">
-          <div className="section-split reverse">
-            <figure className="side-image">
-              <img src={sideImages.mirada} alt="Diseño de cejas y pestañas" loading="lazy" />
-            </figure>
-            <div className="section-content">
-              <div className="section-headline">
-                <h2>Cejas y pestañas</h2>
-                <p>Diseño de mirada con efecto natural y elegante.</p>
-              </div>
-              <div className="two-columns">
-                <article className="list-card">
-                  <h3>Cejas | Diseño y color</h3>
-                  <p>
-                    Realzamos tu mirada con un diseño adaptado a tus facciones y estilo natural.
-                  </p>
-                  {cejas.map((item) => (
-                    <div className="line-block" key={item.name}>
-                      <div className="line-item">
-                        <span>{item.name}</span>
-                        <strong>{item.price}</strong>
-                      </div>
-                      <p>{item.detail}</p>
-                    </div>
-                  ))}
-                </article>
-                <article className="list-card">
-                  <h3>Pestañas</h3>
-                  {pestanas.map((item) => (
-                    <div className="line-block" key={item.name}>
-                      <div className="line-item">
-                        <span>{item.name}</span>
-                        <strong>{item.price}</strong>
-                      </div>
-                      <p>{item.detail}</p>
-                    </div>
-                  ))}
-                </article>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-reveal" id="presoterapia">
-        <div className="container">
-          <div className="section-split">
-            <figure className="side-image">
-              <img src={sideImages.presoterapia} alt="Presoterapia y recuperación corporal" loading="lazy" />
-            </figure>
-            <div className="section-content">
-              <div className="list-card">
-                <h2>Presoterapia</h2>
-                <p>
-                  Tratamiento de drenaje linfático mediante presión de aire para mejorar
-                  circulación, reducir retención de líquidos y combatir celulitis. Muy recomendada
-                  para deportistas por su ayuda en recuperación muscular y eliminación de toxinas.
-                </p>
-                <div className="line-item">
-                  <span>Sesión 30 min (piernas, abdomen o brazos)</span>
-                  <strong>15 €</strong>
-                </div>
-                <div className="line-item">
-                  <span>Sesiones de 40 min</span>
-                  <strong>Aprox. 20 €</strong>
-                </div>
-                <div className="line-item">
-                  <span>Presoterapia + vendas frías Arosa</span>
-                  <strong>35 €</strong>
-                </div>
-                <p className="section-note">
-                  Opciones adicionales: presoterapia ocular y cuerpo completo (consultar precio).
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-reveal" id="ubicacion">
-        <div className="container">
-          <div className="location-card">
-            <h2>Ubicación</h2>
-            <p>
-              Estamos en La Almunia de Doña Godina. Pulsa el botón para abrir la ruta directa en
-              Google Maps y llegar
-              al centro sin complicaciones.
-            </p>
-            <div className="map-frame-wrap">
-              <iframe
-                title="Mapa interactivo de ubicación"
-                src={`https://www.google.com/maps?output=embed&q=${encodeURIComponent(locationAddress)}`}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-              />
-            </div>
-            <a className="btn btn-primary" href={locationLink} target="_blank" rel="noreferrer">
-              Abrir ubicación
-            </a>
+          <div className="visual-grid-action">
+            <Link className="btn btn-primary" href="/servicios">
+              Ver toda la carta de servicios
+            </Link>
           </div>
         </div>
       </section>
@@ -571,25 +169,45 @@ export default function HomePage() {
               "Cada tratamiento se adapta a tu piel, tu momento y tus objetivos para que disfrutes
               resultados visibles con una experiencia cuidada."
             </p>
-            <span>Centro de Estética</span>
+            <span>Marta Martínez Sáez</span>
           </div>
         </div>
       </section>
 
-      <section className="section cta-section" id="contacto">
-        <div className="container cta-box section-reveal">
+      <section className="section section-reveal" id="ubicacion">
+        <div className="container">
+          <div className="section-headline center-headline">
+            <p className="eyebrow">Dónde estamos</p>
+            <h2>Te esperamos en La Almunia</h2>
+            <p>C. de Garay, 16 · 50100 La Almunia de Doña Godina, Zaragoza. Atención con cita previa.</p>
+          </div>
+          <div className="location-card">
+            <div className="map-frame-wrap">
+              <iframe
+                title="Mapa de ubicación del centro"
+                src={`https://www.google.com/maps?output=embed&q=${encodeURIComponent(locationAddress)}`}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
+            <a className="btn btn-primary" href={locationLink} target="_blank" rel="noreferrer">
+              Cómo llegar · abrir en Google Maps
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="section cta-section section-reveal">
+        <div className="container cta-box">
           <h2>Reserva tu cita</h2>
           <p>
             Contacto directo para asesoramiento y reservas: <strong>+34 676 23 97 89</strong>.
           </p>
-          <div className="mini-note">
-            Si tienes dudas sobre zonas, combinados o tratamientos personalizados, te asesoramos
-            por WhatsApp.
-          </div>
           <div className="hero-cta">
-            <a className="btn btn-primary" href="tel:+34676239789">
-              Llamar
-            </a>
+            <Link className="btn btn-primary" href="/contacto">
+              Reservar cita
+            </Link>
             <a
               className="btn btn-secondary"
               href="https://wa.me/34676239789"
@@ -599,18 +217,6 @@ export default function HomePage() {
               WhatsApp +34 676 23 97 89
             </a>
           </div>
-          <footer className="site-footer">
-            <small>
-              Powered by{" "}
-              <a
-                href="https://www.nexusglobalsuministros.com/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Nexus Global
-              </a>
-            </small>
-          </footer>
         </div>
       </section>
     </main>
