@@ -1561,6 +1561,13 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .glow-actions {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
   .glow-form-panel {
     overflow: hidden;
     max-height: 0;
@@ -2334,6 +2341,11 @@ h3 {
 
   .about-image {
     min-height: 320px;
+  }
+
+  .about-text {
+    justify-items: center;
+    text-align: center;
   }
 
   .footer-grid {
