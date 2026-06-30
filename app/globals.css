@@ -11,6 +11,8 @@
   --shadow-md: 0 14px 36px -22px rgba(13, 61, 45, 0.45);
   --shadow-lg: 0 24px 60px -30px rgba(13, 61, 45, 0.55);
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-body: "Mulish", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 * {
@@ -21,7 +23,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: var(--font-body), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-body);
   background:
     radial-gradient(circle at 0% 0%, #f5fbf8 0%, #eef5f2 34%, #eef7f3 65%, #f4faf7 100%);
   color: var(--text);
@@ -29,34 +31,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-}
-
-button,
-input,
-select,
-textarea,
-.btn {
-  font: inherit;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.glow-title,
-.gift-title,
-.gift-card-brand,
-.gift-card-amount,
-.glow-price-amount,
-.catalog-block-title,
-.group-title,
-.gift-form-panel h3,
-.glow-form-panel h3,
-.offer-price strong,
-.contact-big {
-  font-family: var(--font-display), Georgia, "Times New Roman", serif;
 }
 
 ::selection {
@@ -93,6 +67,11 @@ p {
 
 .section {
   padding: 4.8rem 0;
+}
+
+/* Para que el menú fijo no tape las secciones al saltar con anclas */
+section[id] {
+  scroll-margin-top: 92px;
 }
 
 .nav-wrap {
@@ -639,6 +618,19 @@ h3 {
   white-space: nowrap;
 }
 
+.line-duration {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.06rem 0.5rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-2) !important;
+  font-size: 0.7rem;
+  font-weight: 600;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
 .line-block {
   display: grid;
   gap: 0.3rem;
@@ -667,7 +659,7 @@ h3 {
   top: -0.35em;
   left: 0.2em;
   z-index: -1;
-  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 9rem;
   line-height: 1;
   color: rgba(255, 255, 255, 0.12);
@@ -1561,13 +1553,6 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .glow-actions {
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
   .glow-form-panel {
     overflow: hidden;
     max-height: 0;
@@ -1790,8 +1775,9 @@ h3 {
 .about-grid {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-  gap: 2.4rem;
+  gap: clamp(2.5rem, 6vw, 5rem);
   align-items: center;
+  margin-bottom: 2.6rem;
 }
 
 .about-image {
@@ -1802,8 +1788,13 @@ h3 {
 
 .about-text {
   display: grid;
-  gap: 1rem;
+  gap: 1.1rem;
   justify-items: start;
+  padding-left: clamp(0rem, 1.5vw, 1.5rem);
+}
+
+.about-text p {
+  max-width: 52ch;
 }
 
 .about-text p {
@@ -2341,11 +2332,6 @@ h3 {
 
   .about-image {
     min-height: 320px;
-  }
-
-  .about-text {
-    justify-items: center;
-    text-align: center;
   }
 
   .footer-grid {

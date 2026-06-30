@@ -22,23 +22,27 @@ const categories = [
             name: "Citrus Vita Essence",
             detail:
               "Iluminador y antioxidante a base de Vitamina C. Aporta vitalidad y unifica el tono.",
+            duration: "60 min",
             price: "Desde 70 €"
           },
           {
             name: "3D Collagen Revolution",
             detail:
-              "Reafirmante y regenerador que estimula la producción de colágeno. Mejora la textura.",
+              "Reafirmante y regenerador que estimula la producción de colágeno. Mejora la textura. Protocolo recomendado: 1 sesión cada 15 días (3 sesiones).",
+            duration: "60 min",
             price: "Desde 80 €"
           },
           {
             name: "The Cure",
             detail:
               "Cura intensiva con terapia facial, cargas energéticas e hidratación profunda.",
+            duration: "60 min",
             price: "Desde 70 €"
           },
           {
             name: "Pure Skin Ritual",
             detail: "Limpieza facial profunda por ultrasonidos. Purifica, oxigena y prepara la piel.",
+            duration: "45 min",
             price: "Desde 45 €"
           }
         ]
@@ -48,13 +52,14 @@ const categories = [
         items: [
           {
             name: "Susurros de Calma",
-            detail: "Masaje craneal y facial profundamente relajante. Duración: 30 minutos.",
+            detail: "Masaje craneal y facial profundamente relajante.",
+            duration: "30 min",
             price: "30 €"
           },
           {
             name: "Despierta Tus Sentidos",
-            detail:
-              "Tratamiento holístico de aromaterapia que reconecta cuerpo y mente. Duración: 60 minutos.",
+            detail: "Tratamiento holístico de aromaterapia que reconecta cuerpo y mente.",
+            duration: "60 min",
             price: "60 €"
           }
         ]
@@ -82,16 +87,35 @@ const categories = [
     groups: [
       {
         title: "Presoterapia",
-        note: "Drenaje linfático por presión de aire: mejora circulación, reduce retención de líquidos y combate la celulitis. Muy recomendada para recuperación muscular.",
+        note: "Tratamiento de drenaje linfático mediante presión de aire, ideal para mejorar la circulación, reducir la retención de líquidos y combatir la celulitis. Favorece una piel más firme y uniforme, con sensación de ligereza desde la primera sesión. Especialmente recomendada para deportistas: ayuda a la recuperación muscular, reduce la fatiga y acelera la eliminación de toxinas tras el ejercicio.",
         items: [
-          { name: "Sesión 30 min (piernas, abdomen o brazos)", price: "15 €" },
-          { name: "Sesiones de 40 min", price: "Aprox. 20 €" },
-          { name: "Presoterapia + vendas frías Arosa", price: "35 €" },
           {
-            name: "Presoterapia ocular y cuerpo completo",
-            detail: "Opciones adicionales.",
-            price: "Consultar"
-          }
+            name: "Sesión de presoterapia",
+            detail: "A elegir: piernas, abdomen o brazos.",
+            duration: "30 min",
+            price: "15 €"
+          },
+          {
+            name: "Sesión de presoterapia",
+            detail: "Sesión más larga. Precio aproximado, consultar.",
+            duration: "40 min",
+            price: "Aprox. 20 €"
+          },
+          { name: "Presoterapia ocular", detail: "Consultar precio.", price: "Consultar" },
+          { name: "Cuerpo completo", detail: "Consultar precio.", price: "Consultar" }
+        ]
+      },
+      {
+        title: "Presoterapia + vendas frías Arosa",
+        note: "Tratamiento combinado que potencia el drenaje, mejora la textura de la piel y aporta un efecto reafirmante y tonificante. Las vendas frías de Arosa activan la circulación, alivian la pesadez y favorecen la eliminación de líquidos, dejando la piel más lisa y revitalizada.",
+        items: [{ name: "Presoterapia + vendas frías Arosa", price: "35 €" }]
+      },
+      {
+        title: "Exfoliación corporal · Aromas del Mundo",
+        note: "Exfoliación corporal que renueva y suaviza la piel, dejándola luminosa y perfumada.",
+        items: [
+          { name: "Exfoliación completa", duration: "30–60 min", price: "75 €" },
+          { name: "Por zonas", price: "35 €" }
         ]
       }
     ]
@@ -105,17 +129,34 @@ const categories = [
       {
         title: "Manicura",
         items: [
-          { name: "Cortar y limar", detail: "Arreglo básico para un acabado limpio.", price: "18 €" },
+          {
+            name: "Cortar y limar",
+            detail: "Arreglo básico para un acabado limpio.",
+            duration: "20–30 min",
+            price: "18 €"
+          },
           {
             name: "Manicura semipermanente",
             detail: "Esmaltado de larga duración, brillante y resistente.",
+            duration: "40 min",
             price: "22 €"
           },
-          { name: "Retirada de esmalte semipermanente", detail: "Servicio adicional.", price: "+5 €" },
-          { name: "Diseños nail art", detail: "Suplemento por decoración.", price: "1 € / 2 uñas" },
+          {
+            name: "Retirada de esmalte semipermanente",
+            detail: "Servicio adicional.",
+            duration: "30 min",
+            price: "+5 €"
+          },
+          {
+            name: "Diseños nail art",
+            detail: "Suplemento por decoración.",
+            duration: "+10 min",
+            price: "1 € / 2 uñas"
+          },
           {
             name: "Manicura Spa Deluxe",
-            detail: "Ritual completo con exfoliación, hidratación profunda y masaje.",
+            detail: "Ritual completo con exfoliación, hidratación profunda y masaje. Esmaltado aparte.",
+            duration: "60 min",
             price: "35 €"
           }
         ]
@@ -123,17 +164,29 @@ const categories = [
       {
         title: "Pedicura",
         items: [
-          { name: "Cortar y limar", detail: "Arreglo básico para un acabado limpio.", price: "18 €" },
+          {
+            name: "Cortar y limar",
+            detail: "Arreglo básico para un acabado limpio.",
+            duration: "20–30 min",
+            price: "18 €"
+          },
           {
             name: "Pedicura con esmaltado",
             detail: "Cuidado de uñas y esmaltado de acabado duradero.",
+            duration: "40 min",
             price: "25 €"
           },
-          { name: "Retirada de esmalte semipermanente", detail: "Servicio adicional.", price: "+5 €" },
+          {
+            name: "Retirada de esmalte semipermanente",
+            detail: "Servicio adicional.",
+            duration: "30 min",
+            price: "+5 €"
+          },
           {
             name: "Pedicura Premium",
             detail:
               "Tratamiento completo: eliminación de durezas, exfoliación, hidratación, masaje y esmaltado.",
+            duration: "60 min",
             price: "38 €"
           }
         ]
@@ -183,21 +236,25 @@ const categories = [
           {
             name: "Diseño de cejas personalizado",
             detail: "Depilación y definición según la forma del rostro.",
+            duration: "15 min",
             price: "8 €"
           },
           {
             name: "Tinte de cejas",
             detail: "Aporta intensidad y definición para una mirada más marcada.",
+            duration: "15 min",
             price: "15 €"
           },
           {
             name: "Diseño + tinte de cejas",
             detail: "El combo perfecto para cejas definidas y con mayor profundidad.",
+            duration: "30 min",
             price: "25 €"
           },
           {
             name: "Primera visita / Asesoramiento de cejas",
-            detail: "Sesión de 20 min con análisis y recomendación personalizada.",
+            detail: "Análisis y recomendación personalizada.",
+            duration: "30 min",
             price: "12 €"
           }
         ]
@@ -207,12 +264,14 @@ const categories = [
         items: [
           {
             name: "Lifting de pestañas + tinte",
-            detail: "Eleva, curva y oscurece la pestaña natural. Duración aprox.: 2 meses.",
+            detail: "Eleva, curva y oscurece la pestaña natural. Resultado de hasta 2 meses.",
+            duration: "60 min",
             price: "45 €"
           },
           {
             name: "Tinte de pestañas",
             detail: "Coloración semipermanente que intensifica el tono natural.",
+            duration: "15 min",
             price: "15 €"
           }
         ]
@@ -326,7 +385,12 @@ export default function ServicesCatalog() {
                         {group.items.map((item) => (
                           <div className="line-block" key={item.name}>
                             <div className="line-item">
-                              <span>{item.name}</span>
+                              <span className="line-name">
+                                {item.name}
+                                {item.duration ? (
+                                  <span className="line-duration">⏱ {item.duration}</span>
+                                ) : null}
+                              </span>
                               <strong>{item.price}</strong>
                             </div>
                             {item.detail ? <p>{item.detail}</p> : null}

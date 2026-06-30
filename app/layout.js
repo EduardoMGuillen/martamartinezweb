@@ -172,7 +172,7 @@ const glowResetJsonLd = {
   brand: { "@type": "Brand", name: businessName },
   offers: {
     "@type": "Offer",
-    url: `${siteUrl}/glow-reset`,
+    url: `${siteUrl}/#glow-reset`,
     price: "199",
     priceCurrency: "EUR",
     availability: "https://schema.org/InStock",
