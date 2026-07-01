@@ -1,13 +1,11 @@
-import Link from "next/link";
-
 const mapUrl = "https://maps.app.goo.gl/ZmvSNEpq1qnQr2RX9";
 
 const footerLinks = [
-  { href: "/glow-reset", label: "Glow Reset 360°" },
-  { href: "/servicios", label: "Servicios" },
-  { href: "/tarjetas-regalo", label: "Tarjetas regalo" },
-  { href: "/sobre-mi", label: "Sobre mí" },
-  { href: "/contacto", label: "Contacto" }
+  { href: "#servicios", label: "Servicios" },
+  { href: "#tarjetas-regalo", label: "Tarjetas regalo" },
+  { href: "#glow-reset", label: "Glow Reset 360°" },
+  { href: "#sobre-mi", label: "Sobre mí" },
+  { href: "#contacto", label: "Contacto" }
 ];
 
 export default function SiteFooter() {
@@ -26,9 +24,9 @@ export default function SiteFooter() {
         <nav className="footer-nav" aria-label="Pie de página">
           <span className="footer-heading">Explora</span>
           {footerLinks.map((item) => (
-            <Link key={item.href} href={item.href}>
+            <a key={item.href} href={item.href}>
               {item.label}
-            </Link>
+            </a>
           ))}
         </nav>
 

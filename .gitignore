@@ -12,11 +12,14 @@
 .DS_Store
 *.pem
 
+# material de referencia (fotos/vídeos sin procesar)
+/fotos
+
 # debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# local update clone
-/update-1
+# Claude Code (config local)
+/.claude
