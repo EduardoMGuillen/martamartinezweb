@@ -1,11 +1,13 @@
 import Image from "next/image";
 
+import FaqSection from "./FaqSection";
 import GlowResetFeatured from "./GlowResetFeatured";
 import GiftCardPicker from "./GiftCardPicker";
 import ServicesCatalog from "./ServicesCatalog";
+import { business, fullAddress, nearbyTowns } from "./siteConfig";
 
-const locationLink = "https://maps.app.goo.gl/ZmvSNEpq1qnQr2RX9";
-const locationAddress = "C. de Garay, 16, 50100 La Almunia de Doña Godina, Zaragoza, España";
+const locationLink = business.mapUrl;
+const locationAddress = fullAddress;
 
 const values = [
   {
@@ -28,11 +30,12 @@ export default function HomePage() {
       <section className="hero section section-reveal" id="inicio">
         <div className="container hero-grid">
           <div className="hero-content">
-            <p className="eyebrow">Maquillaje y estética · La Almunia</p>
-            <h1>Belleza, bienestar y cuidado profesional en un solo espacio.</h1>
+            <p className="eyebrow">Belleza, bienestar y cuidado profesional</p>
+            <h1>Tu centro de estética en La Almunia de Doña Godina</h1>
             <p className="hero-copy">
-              Maquillaje, tratamientos faciales y corporales, manos, pies, depilación y mirada.
-              Una experiencia cuidada y personalizada para cada piel.
+              Maquillaje, tratamientos faciales y corporales, presoterapia, manicura, pedicura,
+              depilación con cera y láser SHR, cejas y pestañas. Una experiencia cuidada y
+              personalizada para cada piel, con especialización en estética oncológica.
             </p>
             <div className="hero-cta">
               <a className="btn btn-primary" href="#servicios">
@@ -53,8 +56,8 @@ export default function HomePage() {
           <div className="hero-visual">
             <div className="hero-image-main">
               <Image
-                src="/Fotos/ad2a20d3-1384-4ea6-b056-6b6b6396c0ff.jpg"
-                alt="Tratamiento facial en centro de estética"
+                src={business.heroImage}
+                alt="Tratamiento facial en el centro de estética Marta Martínez Sáez, La Almunia de Doña Godina"
                 fill
                 priority
                 sizes="560px"
@@ -81,7 +84,7 @@ export default function HomePage() {
           <figure className="about-image side-image">
             <Image
               src="/Fotos/ad2a20d3-1384-4ea6-b056-6b6b6396c0ff.jpg"
-              alt="Marta Martínez Sáez en su centro de estética"
+              alt="Marta Martínez Sáez, esteticista en La Almunia de Doña Godina"
               fill
               sizes="(max-width: 980px) 100vw, 480px"
             />
@@ -114,14 +117,20 @@ export default function HomePage() {
         </div>
       </section>
 
+      <FaqSection />
+
       {/* Ubicación y contacto */}
       <section className="section section-reveal" id="contacto">
         <div className="container">
           <div className="section-headline center-headline">
             <p className="eyebrow">Contacto</p>
-            <h2>Reserva tu cita</h2>
+            <h2>Reserva tu cita en La Almunia</h2>
             <p>
               Atención con cita previa. Escríbenos o llámanos: <strong>+34 676 23 97 89</strong>.
+            </p>
+            <p className="service-area">
+              Clientas y clientes de La Almunia de Doña Godina y de toda la comarca de Valdejalón:{" "}
+              {nearbyTowns.join(", ")}.
             </p>
           </div>
 
@@ -155,7 +164,7 @@ export default function HomePage() {
             <div className="location-card">
               <div className="map-frame-wrap">
                 <iframe
-                  title="Mapa interactivo de ubicación"
+                  title="Mapa del centro de estética en La Almunia de Doña Godina"
                   src={`https://www.google.com/maps?output=embed&q=${encodeURIComponent(locationAddress)}`}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"

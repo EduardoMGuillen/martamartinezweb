@@ -23,3 +23,7 @@ pnpm-debug.log*
 
 # Claude Code (config local)
 /.claude
+
+# local update clones
+/update-1
+/update1

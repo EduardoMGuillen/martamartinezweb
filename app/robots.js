@@ -1,4 +1,4 @@
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.martamartinezestetica.com";
+import { siteUrl } from "./siteConfig";
 
 export default function robots() {
   return {

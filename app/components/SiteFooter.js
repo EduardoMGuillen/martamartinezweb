@@ -5,6 +5,7 @@ const footerLinks = [
   { href: "#tarjetas-regalo", label: "Tarjetas regalo" },
   { href: "#glow-reset", label: "Glow Reset 360°" },
   { href: "#sobre-mi", label: "Sobre mí" },
+  { href: "#preguntas-frecuentes", label: "Preguntas frecuentes" },
   { href: "#contacto", label: "Contacto" }
 ];
 
@@ -15,8 +16,8 @@ export default function SiteFooter() {
         <div className="footer-brand">
           <span className="footer-name">Marta Martínez Sáez</span>
           <p>
-            Maquillaje y estética con atención personalizada en La Almunia de Doña Godina.
-            Especialistas en cuidado oncológico.
+            Centro de estética y maquillaje con atención personalizada en La Almunia de Doña
+            Godina (Zaragoza). Especialistas en cuidado oncológico.
           </p>
           <p className="footer-note">Atención con cita previa.</p>
         </div>
@@ -50,7 +51,8 @@ export default function SiteFooter() {
 
       <div className="container footer-bottom">
         <small>
-          © {new Date().getFullYear()} Marta Martínez Sáez · Maquillaje y estética
+          © {new Date().getFullYear()} Marta Martínez Sáez · Centro de estética en La Almunia
+          de Doña Godina
         </small>
         <small>
           Powered by{" "}
